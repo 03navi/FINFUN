@@ -1,0 +1,38 @@
+//Budget Tracker
+import java.util.Scanner;
+
+public class BudgetTracker {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your monthly income: ");
+        double monthlyIncome = scanner.nextDouble();
+
+        System.out.print("Enter your monthly expenses: ");
+        double monthlyExpenses = scanner.nextDouble();
+
+        double monthlySavings = monthlyIncome - monthlyExpenses;
+        System.out.printf("Your monthly savings are: %.2f\n", monthlySavings);
+
+        System.out.print("Enter your budget for groceries: ");
+        double groceryBudget = scanner.nextDouble();
+
+        System.out.print("Enter your budget for utilities: ");
+        double utilitiesBudget = scanner.nextDouble();
+
+        System.out.print("Enter your budget for transportation: ");
+        double transportationBudget = scanner.nextDouble();
+
+        double totalBudget = groceryBudget + utilitiesBudget + transportationBudget;
+        double remainingBudget = monthlySavings - totalBudget;
+
+        if (remainingBudget > 0) {
+            System.out.printf("You have %.2f left in your budget.\n", remainingBudget);
+        } else if (remainingBudget < 0) {
+            System.out.printf("You are over budget by %.2f.\n", Math.abs(remainingBudget));
+        } else {
+            System.out.println("You have used up all your budget.");
+        }
+    }
+}
