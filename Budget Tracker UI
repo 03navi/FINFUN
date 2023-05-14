@@ -1,0 +1,49 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class BudgetTrackerUI {
+    public static void main(String[] args) {
+        // create a frame
+        JFrame frame = new JFrame("Budget Tracker");
+
+        // set the size of the frame
+        frame.setSize(400, 400);
+
+        // create a panel to hold the components
+        JPanel panel = new JPanel(new GridBagLayout());
+
+        // create the components
+        JLabel incomeLabel = new JLabel("Income:");
+        JTextField incomeField = new JTextField(10);
+        JLabel expenseLabel = new JLabel("Expense:");
+        JTextField expenseField = new JTextField(10);
+        JButton addButton = new JButton("Add");
+        JButton resetButton = new JButton("Reset");
+
+        // add the components to the panel
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.insets = new Insets(10, 10, 10, 10);
+        panel.add(incomeLabel, gbc);
+        gbc.gridx = 1;
+        panel.add(incomeField, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        panel.add(expenseLabel, gbc);
+        gbc.gridx = 1;
+        panel.add(expenseField, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.gridwidth = 2;
+        panel.add(addButton, gbc);
+        gbc.gridy = 3;
+        panel.add(resetButton, gbc);
+
+        // add the panel to the frame
+        frame.add(panel);
+
+        // set the frame to be visible
+        frame.setVisible(true);
+    }
+}
